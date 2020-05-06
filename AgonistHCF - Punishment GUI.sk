@@ -1,0 +1,693 @@
+#======================================#
+#	   Punishment GUI  	 	           #
+#      Author: AndresZlp15             #
+#	   Version: 1.0     	           #
+#======================================#
+
+options:
+
+	permission: hcf.command.punish
+	permission.message: &cYou don't have permissions.
+	
+command /punish [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 6 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 1 ticks
+			format slot 10 of player with book named "&5&lSpam" to run make player execute command "/spam %arg-1%"
+			format slot 11 of player with book named "&5&lFlood" to run [make player execute command "/flood %arg-1%"]
+			format slot 12 of player with book named "&5&lToxic" to run [make player execute command "/toxic %arg-1%"]
+			format slot 13 of player with book named "&5&lAdvertising" to run [make player execute command "/advertising %arg-1%"]
+			format slot 14 of player with book named "&5&lStaff Disrespect" to run [make player execute command "/staffdisrespect %arg-1%"]
+			format slot 15 of player with book named "&5&lIP Steps" to run [make player execute command "/ipsteps %arg-1%"]
+			format slot 16 of player with book named "&5&lServer Disrespect" to run [make player execute command "/serverdisrespect %arg-1%"]
+			format slot 19 of player with purple dye named "&5&lToxic renames" to run [make player execute command "/toxicrenames %arg-1%"]
+			format slot 20 of player with purple dye named "&5&lMiss use of commands" to run [make player execute command "/missuseofcommands %arg-1%"]
+			format slot 21 of player with purple dye named "&5&lDuplicate items" to run [make player execute command "/duplicateitems %arg-1%"]
+			format slot 22 of player with purple dye named "&5&lGriefing" to run [make player execute command "/griefing %arg-1%"]
+			format slot 23 of player with purple dye named "&5&lBug Abuse" to run [make player execute command "/bugabuse %arg-1%"]
+			format slot 24 of player with purple dye named "&5&lBlock Glitch" to run [make player execute command "/blockglitch %arg-1%"]
+			format slot 25 of player with purple dye named "&5&lPvP Timer abuse" to run [make player execute command "/pvptimerabuse %arg-1%"]
+			format slot 28 of player with purple dye named "&5&lTruce" to run [make player execute command "/truce %arg-1%"]
+			format slot 29 of player with purple dye named "&5&lInside" to run [make player execute command "/inside %arg-1%"]
+			format slot 30 of player with purple dye named "&5&lBan Evading" to run [make player execute command "/banevading %arg-1%"]
+			format slot 31 of player with purple dye named "&5&lDTR Evading" to run [make player execute command "/dtrevading %arg-1%"]
+			format slot 32 of player with purple dye named "&5&lDeathban Evading" to run [make player execute command "/deathbanevading %arg-1%"]
+			format slot 33 of player with purple dye named "&5&lAlts in faction" to run [make player execute command "/altsinfaction %arg-1%"]
+			format slot 34 of player with purple dye named "&5&lKick and Kill" to run [make player execute command "/kickandkill %arg-1%"]
+			format slot 37 of player with purple dye named "&5&lLeave and Kill" to run [make player execute command "/leaveandkill %arg-1%"]
+			format slot 38 of player with purple dye named "&5&lBetray" to run [make player execute command "/betray %arg-1%"]
+			format slot 39 of player with purple dye named "&5&lDDOS Threats" to run [make player execute command "/ddosthreats %arg-1%"]
+			format slot 40 of player with purple dye named "&5&lLying to Staff" to run [make player execute command "/lyingtostaff %arg-1%"]
+			format slot 41 of player with purple dye named "&5&lHacked Client" to run [make player execute command "/hackedclient %arg-1%"]
+			format slot 42 of player with purple dye named "&5&lCheating in SS" to run [make player execute command "/cheatinginss %arg-1%"]
+			format slot 43 of player with purple dye named "&5&lIlegal Mods" to run [make player execute command "/ilegalmods %arg-1%"]
+			format slot 49 of player with arrow named "&5Next page &7»" to run [make player execute command "/opengui2punishments %arg-1%"]
+			format slot 0 of player with purple glass named "&r" to be unstealable
+			format slot 1 of player with purple glass named "&r" to be unstealable
+			format slot 2 of player with purple glass named "&r" to be unstealable
+			format slot 3 of player with purple glass named "&r" to be unstealable
+			format slot 4 of player with purple glass named "&r" to be unstealable
+			format slot 5 of player with purple glass named "&r" to be unstealable
+			format slot 6 of player with purple glass named "&r" to be unstealable
+			format slot 7 of player with purple glass named "&r" to be unstealable
+			format slot 8 of player with purple glass named "&r" to be unstealable
+			format slot 9 of player with purple glass named "&r" to be unstealable
+			format slot 17 of player with purple glass named "&r" to be unstealable
+			format slot 18 of player with purple glass named "&r" to be unstealable
+			format slot 26 of player with purple glass named "&r" to be unstealable
+			format slot 27 of player with purple glass named "&r" to be unstealable
+			format slot 35 of player with purple glass named "&r" to be unstealable
+			format slot 36 of player with purple glass named "&r" to be unstealable
+			format slot 44 of player with purple glass named "&r" to be unstealable
+			format slot 45 of player with purple glass named "&r" to be unstealable
+			format slot 46 of player with purple glass named "&r" to be unstealable
+			format slot 47 of player with purple glass named "&r" to be unstealable
+			format slot 48 of player with purple glass named "&r" to be unstealable
+			format slot 50 of player with purple glass named "&r" to be unstealable
+			format slot 51 of player with purple glass named "&r" to be unstealable
+			format slot 52 of player with purple glass named "&r" to be unstealable
+			format slot 53 of player with purple glass named "&r" to be unstealable
+			stop
+
+command /opengui2punishments [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 6 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 1 ticks
+			format slot 10 of player with purple dye named "&5&lRefusal to SS" to run make player execute command "/refusaltoss %arg-1%"
+			format slot 11 of player with purple dye named "&5&lX-Ray" to run [make player execute command "/xray %arg-1%"]
+			format slot 12 of player with purple dye named "&5&lHolding Hostage" to run [make player execute command "/holdinghostage %arg-1%"]
+			format slot 49 of player with arrow named "&7« &5Previous page" to run [make player execute command "/punish %arg-1%"]
+			format slot 0 of player with purple glass named "&r" to be unstealable
+			format slot 1 of player with purple glass named "&r" to be unstealable
+			format slot 2 of player with purple glass named "&r" to be unstealable
+			format slot 3 of player with purple glass named "&r" to be unstealable
+			format slot 4 of player with purple glass named "&r" to be unstealable
+			format slot 5 of player with purple glass named "&r" to be unstealable
+			format slot 6 of player with purple glass named "&r" to be unstealable
+			format slot 7 of player with purple glass named "&r" to be unstealable
+			format slot 8 of player with purple glass named "&r" to be unstealable
+			format slot 9 of player with purple glass named "&r" to be unstealable
+			format slot 17 of player with purple glass named "&r" to be unstealable
+			format slot 18 of player with purple glass named "&r" to be unstealable
+			format slot 26 of player with purple glass named "&r" to be unstealable
+			format slot 27 of player with purple glass named "&r" to be unstealable
+			format slot 35 of player with purple glass named "&r" to be unstealable
+			format slot 36 of player with purple glass named "&r" to be unstealable
+			format slot 44 of player with purple glass named "&r" to be unstealable
+			format slot 45 of player with purple glass named "&r" to be unstealable
+			format slot 46 of player with purple glass named "&r" to be unstealable
+			format slot 47 of player with purple glass named "&r" to be unstealable
+			format slot 48 of player with purple glass named "&r" to be unstealable
+			format slot 50 of player with purple glass named "&r" to be unstealable
+			format slot 51 of player with purple glass named "&r" to be unstealable
+			format slot 52 of player with purple glass named "&r" to be unstealable
+			format slot 53 of player with purple glass named "&r" to be unstealable
+			stop
+
+command /ban [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			execute player command "/punish %arg-1%"
+
+command /tempban [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			execute player command "/punish %arg-1%"
+
+command /mute [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			execute player command "/punish %arg-1%"
+
+command /tempmute [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			execute player command "/punish %arg-1%"
+
+command /warn [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			execute player command "/punish %arg-1%"
+
+command /ipban [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			execute player command "/punish %arg-1%"
+
+command /spam [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Mute 30 Minutes" to close then run [execute console command "/sudo force %player% litebans:mute %arg-1% 30m Spam (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Mute 1 Hour" to close then run [execute console command "/sudo force %player% litebans:mute %arg-1% 1h Spam (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Mute 2 Hours" to close then run [execute console command "/sudo force %player% litebans:mute %arg-1% 2h Spam (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /flood [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Mute 20 Minutes" to close then run [execute console command "/sudo force %player% litebans:mute %arg-1% 20m Flood (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Mute 40 Minutes" to close then run [execute console command "/sudo force %player% litebans:mute %arg-1% 40m Flood (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Mute 1 Hour" to close then run [execute console command "/sudo force %player% litebans:mute %arg-1% 1h Flood (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /toxic [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Mute 40 Minutes" to close then run [execute console command ""/sudo force %player% litebans:mute %arg-1% 40m Toxic (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Mute 1 Hour" to close then run [execute console command "/sudo force %player% litebans:mute %arg-1% 1h Toxic (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Mute 2 Hours" to close then run [execute console command "/sudo force %player% litebans:mute %arg-1% 2h Toxic (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /advertising [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Warn" to close then run [execute console command "/sudo force %player% litebans:warn %arg-1% Advertising (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Mute 1 Hour" to close then run [execute console command "/sudo force %player% litebans:mute %arg-1% 1h Advertising (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Ban 1 Day" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 1d Advertising (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop			
+
+command /staffdisrespect [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Mute 1 Hour" to close then run [execute console command "/sudo force %player% litebans:mute %arg-1% 1h Staff Direspect (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Mute 2 Hours" to close then run [execute console command "/sudo force %player% litebans:mute %arg-1% 2h Staff Direspect (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Mute 3 Hours" to close then run [execute console command "/sudo force %player% litebans:mute %arg-1% 3h Staff Direspect (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /ipsteps [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Mute 5 Hours" to close then run [execute console command "/sudo force %player% litebans:mute %arg-1% 5h IP Steps (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Mute 10 Hours" to close then run [execute console command "/sudo force %player% litebans:mute %arg-1% 10h IP Steps (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Permanent IP Ban" to close then run [execute console command "/sudo force %player% litebans:ipban %arg-1% IP Steps (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /serverdisrespect [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Mute 30 Minutes" to close then run [execute console command "/sudo force %player% litebans:mute %arg-1% 30m Server Disrespect (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Mute 1 Hour" to close then run [execute console command "/sudo force %player% litebans:mute %arg-1% 1h Server Disrespect (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Mute 3 Hours" to close then run [execute console command "/sudo force %player% litebans:ipban %arg-1% 3h Server Disrespect (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /holdinghostage [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Ban 1 Hour" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 1h Holding Hostage (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Ban 2 Hours" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 2h Holding Hostage (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Ban 1 Day" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 1d Holding Hostage (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /toxicrenames [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Warn" to close then run [execute console command "/sudo force %player% litebans:warn %arg-1% Toxic renames (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Warn" to close then run [execute console command "/sudo force %player% litebans:warn %arg-1% Toxic renames (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Ban 2 Hours" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 2h Toxic renames (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /missuseofcommands [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Warn" to close then run [execute console command "/sudo force %player% litebans:warn %arg-1% Miss use of commands (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Kick" to close then run [make player execute command "/kick %arg-1% Miss use of commands (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Ban 30 Minutes" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 30m Miss use of commands (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /duplicateitems [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Ban 1 Day" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 1d Duplicate items (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Ban 5 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 1h Duplicate items (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Ban 15 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 15d Duplicate items (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /griefing [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Ban 1 Day" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 1d Griefing (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Ban 4 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 4d Griefing (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Ban 6 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 6d Griefing (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /bugabuse [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Warn" to close then run [execute console command "/sudo force %player% litebans:warn %arg-1% Bug Abuse (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Kick" to close then run [make player execute command "/kick %arg-1% Bug Abuse (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Ban 1 Day" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 1d Bug Abuse (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /blockglitch [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Warn" to close then run [execute console command "/sudo force %player% litebans:warn %arg-1% Block Glitch (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Kick" to close then run [make player execute command "/kick %arg-1% Block Glitch (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Ban 1 Day" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 1d Block Glitch (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /pvptimerabuse [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Ban 1 Day" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 1d PvP Timer abuse (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Ban 3 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 3d PvP Timer abuse (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Ban 5 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 5d PvP Timer abuse (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /truce [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Warn" to close then run [execute console command "/sudo force %player% litebans:warn %arg-1% Truce (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Kick" to close then run [make player execute command "/kick %arg-1% Truce (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Ban 5 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 5d Truce (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /inside [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Ban 5 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 5d Inside (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Ban 15 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 15d Inside (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Ban 30 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 30d Inside (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /banevading [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 13 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Permanent IP Ban" to close then run [execute console command "/sudo force %player% litebans:ipban %arg-1% Ban Evading -s"]
+			format slot 18 of player with paper named "&5&lSee alts" with lore "&7See the alts of the player" to close then run [make player execute command "/alts %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /dtrevading [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Ban 5 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 5d DTR Evading (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Ban 15 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 15d DTR Evading (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Ban 30 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 30d DTR Evading (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /deathbanevading [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Ban 3 Hour" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 3h Deathban Evading (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Ban 5 Hours" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 5h Deathban Evading (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Ban 1 Day" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 1d Deathban Evading (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /altsinfaction [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Ban 5 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 5d Alts in faction (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Ban 15 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 15d Alts in faction (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Ban 30 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 30d Alts in faction (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /kickandkill [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Ban 5 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 5d Kick and Kill (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Ban 15 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 15d Kick and Kill (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Ban 30 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 30d Kick and Kill (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /leaveandkill [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Ban 5 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 5d Leave and Kill (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Ban 15 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 15d Leave and Kill (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Ban 30 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 30d Leave and Kill (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /betray [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Ban 5 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 5d Betray (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Ban 15 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 15d Betray (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Ban 30 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 30d Betray (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /ddosthreats [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Mute 5 Hours" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 5d DDOS Threats (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Ban 15 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 15d DDOS Threats (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Ban 30 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 30d DDOS Threats (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /lyingtostaff [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Ban 10 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 10d Lying to Staff (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Ban 20 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 20d Lying to Staff (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Ban 30 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 30d Lying to Staff (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /hackedclient [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 12 of player with green clay named "&a&lAdmitted" with lore "&8» &5Ban 30 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 30d Hacked Client (Admitted) -s"]
+			format slot 14 of player with red clay named "&c&lNot Admitted" with lore "&8» &5Permanent Ban" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% Hacked Client -s"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /cheatinginss [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 13 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Permanent Ban" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% Cheating in SS -s"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /ilegalmods [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 11 of player with green clay named "&a&lFirst Offence" with lore "&8» &5Ban 2 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 2d Ilegal Mods (First Offence) -s"]
+			format slot 13 of player with yellow clay named "&e&lSecond Offence" with lore "&8» &5Ban 6 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 6d Ilegal Mods (Second Offence) -s"]
+			format slot 15 of player with red clay named "&c&lThird Offence" with lore "&8» &5Ban 10 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 10d Ilegal Mods (Third Offence) -s"]
+			format slot 18 of player with paper named "&5&lSee history" with lore "&7See the history of the player||&7to determine the offence number" to close then run [make player execute command "/history %arg-1%"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /refusaltoss [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 12 of player with yellow clay named "&5&lTime Out" with lore "&8» &5Permanent Ban" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% Refusal to SS (Time Out) -s"]
+			format slot 14 of player with red clay named "&c&lDisconected" with lore "&8» &5Permanent Ban" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% Refusal to SS (Disconected) -s"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
+
+command /xray [<offline player>]:
+	permission: {@permission}
+	permission message: {@permission.message}
+	trigger:
+		if arg-1 is not set:
+			send "&5&lAgonistHCF &8» &7Please specify a player."
+			stop
+		if arg-1 is set:
+			open chest with 3 row named "&5&lAgonistHCF &8» &7Punishments" to player
+			wait 2 ticks
+			format slot 12 of player with green clay named "&a&lAdmitted" with lore "&8» &5Ban 30 Days" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% 30d XRAY (Admitted) -s"]
+			format slot 14 of player with red clay named "&c&lNo Admitted" with lore "&8» &5Permanent Ban" to close then run [execute console command "/sudo force %player% litebans:ban %arg-1% XRAY -s"]
+			format slot 26 of player with arrow named "&5&lBack" with lore "&7Back to the main menu" to run [make player execute command "/punish %arg-1%"]
+			stop
